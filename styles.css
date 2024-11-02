@@ -1,0 +1,31 @@
+
+#contenedorFrutas{
+  display: flex;
+  width:auto;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+.card{
+  display: flex;
+  margin: 10px;
+  width: 220px;
+}
+
+.card-img-top{
+  height: 160px;
+  object-fit:cover;
+}
+
+@media (max-width: 600px) {
+  #contenedorFrutas{
+    width: 90%;
+    justify-content: center;
+  }
+  .card{
+    width: auto;
+  }
+  .card-img-top{
+    height: 200px;
+  }
+}
+

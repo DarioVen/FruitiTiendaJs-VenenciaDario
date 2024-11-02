@@ -1,0 +1,9 @@
+
+[
+  {"id": 1, "nombre": "Manzana", "precio": 1625, "img": "../media/Frutas/apple-5183288_1280.jpg", "cantidad" : 0},
+  {"id": 2, "nombre": "banana", "precio": 1590, "img": "../media/Frutas/banana-5148267_1280.jpg", "cantidad" : 0},
+  {"id": 3, "nombre": "Uvas", "precio": 5590, "img": "../media/Frutas/grapes-5889697_1280.jpg", "cantidad" : 0},
+  {"id": 4, "nombre": "Naranja", "precio": 1390, "img": "../media/Frutas/oranges-15046_1280.jpg", "cantidad" : 0},
+  {"id": 5, "nombre": "Frutilla", "precio": 9160, "img": "./media/Frutas/strawberry-5079237_1280.jpg", "cantidad" : 0},
+  {"id": 6, "nombre": "Sandia", "precio": 999, "img": "./media/Frutas/watermelon-3584717_1280.jpg", "cantidad" : 0}
+]
