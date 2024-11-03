@@ -70,6 +70,15 @@ h1{
     font-size: 20px;
   }
 }
+
+#comprar{
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color:#20d129 ;
+}
 /* Contenedor frutas */
 #contenedorFrutas{
   display: flex;
@@ -83,12 +92,14 @@ h1{
   margin: 10px;
   width: 175px;
   border-radius: 20px;
+  border: 2px solid black;
 }
 .card-img-top{
   height: 120px;
   object-fit:cover;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom:2px solid black;
 }
 @media (max-width: 410px) {
   #contenedorFrutas{

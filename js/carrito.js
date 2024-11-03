@@ -8,36 +8,50 @@ contenedorFrutas.addEventListener('click', (e) => {
   if (e.target.classList.contains("añadir")) validarFrutaEnCarrito(e.target.id)
 });
 
+const falloCarro = () => {
+  Swal.fire({
+    title: "Ingrese una cantidad valida",
+    icon: "warning",
+    confirmButtonText: "Entiendo"});
+}
+
+const exitoCarro = (fruta) => {
+  Swal.fire({
+    title: 'Se añadio al carro',
+    timer: 700, 
+    showConfirmButton: false, 
+    timerProgressBar: false 
+  });
+  document.querySelector(`.kgFruta${fruta.id}`).value = "";
+}
+
 const validarFrutaEnCarrito = (frutaId) => {
   const yaEnCarro= carrito.some(fruta => fruta.id == frutaId);
-
   if (!yaEnCarro) {
     const fruta = frutas.find(fruta => fruta.id == frutaId);
     const cantidadInput = document.querySelector(`.kgFruta${fruta.id}`);
     const cantidadValor = parseInt(cantidadInput.value);
-    if (cantidadValor >= 0) {
+    if (cantidadValor > 0) {
       fruta.cantidad = cantidadValor;
       carrito.push(fruta);
       pintarFrutaCarrito(fruta);
+      exitoCarro(fruta);
     } else {
-      Swal.fire({
-      title: "Ingrese una cantidad valida",
-      icon: "warning",
-      confirmButtonText: "Entiendo"});
+      falloCarro();
     }
   } else {
     const fruta = carrito.find(fruta => fruta.id == frutaId);
     const cantidadInput = document.querySelector(`.kgFruta${fruta.id}`);
     const cantidadValor = parseInt(cantidadInput.value);
-    fruta.cantidad += cantidadValor;
-      if (fruta.cantidad <= 0) {
-      eliminarFrutaCarrito(frutaId);
-      } else {
+    if (cantidadValor > 0) {
+      fruta.cantidad += cantidadValor;
       actualizarTotalesCarrito(carrito);
       pintarCarrito(carrito);
-    }
+      exitoCarro(fruta);
+    } else {
+      falloCarro();
+    } 
   }
-console.log(carrito)
 };
 
 //Pintar fruta en carrito
@@ -77,8 +91,6 @@ const eliminarFrutaCarrito = (frutaId) => {
     carrito.splice(productoIndex, 1);
     pintarCarrito(carrito);
     actualizarTotalesCarrito(carrito);
-  } else {
-    console.error('Fruta no encontrada en el carrito');
   }
 };
 
@@ -92,6 +104,19 @@ const pintarTotalesCarrito = (totalCompra) => {
   const precioTotal = document.getElementById("precioTotal");
   precioTotal.innerText = totalCompra;
 };
+
+const comprarTotal = () => {
+  localStorage.clear();
+  carrito = [];
+  pintarCarrito(carrito);
+  actualizarTotalesCarrito(carrito);
+  Swal.fire({
+    title: 'Gracias por tu compra, crack!',
+    timer: 1500, 
+    showConfirmButton: false, 
+    timerProgressBar: false 
+  });
+}
 
 //Storage carrito
 const guardarCarritoStorage = (carritoDeCompras) => {
