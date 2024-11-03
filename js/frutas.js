@@ -21,13 +21,13 @@ const pintarFrutas = async () => {
 
   frutas.forEach(fruta => {
     const div = document.createElement('div');
-    div.classList.add('class="card"');
+    div.classList.add("card");
     div.innerHTML += `<img src=${fruta.img} class="card-img-top" alt=${fruta.nombre}>
                       <div class="card-body">
                       <h3 class="card-title">${fruta.nombre}</h3>
                       <p>${fruta.precio}$ * Kg</p>
-                        <input type="number" class="kgFruta${fruta.id}" placeholder="Kilogramos">
-                        <button class="btn btn-primary añadir" id="${fruta.id}">Añadir al carrito</button>
+                        <input type="number" class="kgFruta${fruta.id} w-100 mb-1" placeholder="Kilogramos">
+                        <button type="submit" class="btn btn-primary añadir w-100" id="${fruta.id}">Añadir al carrito</button>
                       </div>
                       `
     contenedor.appendChild(div);

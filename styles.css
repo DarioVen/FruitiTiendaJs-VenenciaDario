@@ -1,31 +1,107 @@
+/* General */
+* {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  height: 100vh;
+  display: block;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0) 20px,
+    rgba(0, 0, 0, 0) 40px,
+    #bcffef 40px,
+    #bcffef 60px
+  );
+}
 
+h1{
+  display: flex;
+  padding: 0 30px 40px 15px;
+  justify-content: center;
+  align-items: center;
+  height:140px;
+  gap: 10px;
+  font-size: 80px;
+  color: #fcedd8;
+  background: #d52e3f;
+  border-bottom:  5px solid black;
+  font-family: 'Niconne', cursive;
+  font-weight: 700;
+  text-shadow: 5px 5px 0px #eb452b, 
+              10px 10px 0px #efa032, 
+              15px 15px 0px #46b59b, 
+              20px 20px 0px #017e7f, 
+              25px 25px 0px #052939, 
+              30px 30px 0px #c11a2b, 
+              35px 35px 0px #c11a2b, 
+              40px 40px 0px #c11a2b, 
+              45px 45px 0px #c11a2b;
+}
+@media (max-width: 378px){
+  h1{
+    font-size: 50px;
+    height: 100px;
+  }
+}
+
+/* btn */
+#CarritoFrutero{
+  display: flex;
+  margin-bottom: 40px;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+  border: 4px solid #005c5c;
+  border-radius: 50%;
+  background-color: #6dccb6;
+}
+.bi-basket{
+  font-size: 40px;
+  color:#005c5c;
+}
+
+/* Contenedor frutas */
 #contenedorFrutas{
   display: flex;
-  width:auto;
   padding: 10px;
   flex-wrap: wrap;
+  justify-self: center;
+  width:500px;
 }
+
 .card{
   display: flex;
   margin: 10px;
   width: 220px;
+  border-radius: 20px;
 }
 
 .card-img-top{
   height: 160px;
   object-fit:cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   #contenedorFrutas{
-    width: 90%;
     justify-content: center;
-  }
-  .card{
     width: auto;
   }
+  .card{
+    width: 90%;
+  }
   .card-img-top{
-    height: 200px;
+    height: 180px;
+  }
+}
+@media (min-width: 740px){
+  #contenedorFrutas{
+    width: 740px;
   }
 }
 
