@@ -18,20 +18,22 @@
 <body>
   <header>
     <h1><span>Fruti</span><span>Tienda</span></h1>
-    <button type="button" id="CarritoFrutero"><i class="bi bi-basket"></i></button>
+    <button type="button" id="abrir-canasta"><i class="bi bi-basket"></i></button>
   </header>
   <main>
     <section>
       <div id="contenedorFrutas"></div>
     </section>
-    <section>
+    <div class="modalCanasta">
       <h2>Su carrito</h2>
+      <button type="button" id="cerrar-canasta"><i class="bi bi-x-circle"></i>Salir del carrito</button>
       <div id="carritoFrutas"></div>
-      <div><p>Total de su compra: <span id="precioTotal">0</span> $</p></div>
-    </section>
+      <div id="total"><p>Total de su compra: <span id="precioTotal">0</span> $</p></div>
+    </div>
   </main>
   <script src="./js/frutas.js"></script>
   <script src="./js/Carrito.js"></script>
+  <script src="./js/modal.js"></script>
   <script src="./js/index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>

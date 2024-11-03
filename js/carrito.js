@@ -44,20 +44,21 @@ console.log(carrito)
 const pintarFrutaCarrito = (fruta) => {
   const contenedor = document.getElementById("carritoFrutas");
   const div = document.createElement("div");
-  div.classList.add("productoEnCarrito");
+  div.classList.add("frutaEnCarrito");
   div.innerHTML = `
       <p>${fruta.nombre}</p>
-      <p>Precio: ${fruta.precio}$</p>
+      <p>Precio: ${fruta.precio}$ *kg</p>
       <p>Cantidad: ${fruta.cantidad}kg</p>
-      <button class="btn boton-eliminar" value="${fruta.id}">X</button>
+      <button class="btn botonEliminar" value="${fruta.id}">Quitar del carrito</button>
   `
   contenedor.appendChild(div);
   actualizarTotalesCarrito(carrito);
 };
-// Delegación de eventos para los botones de eliminar
-carritoFrutas.addEventListener('click', (event) => {
-  if (event.target.classList.contains('boton-eliminar')) {
-      const frutaId = event.target.value;
+// Botones de eliminar
+carritoFrutas.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if (e.target.classList.contains('botonEliminar')) {
+      const frutaId = e.target.value;
       eliminarFrutaCarrito(frutaId);
   }
 });
