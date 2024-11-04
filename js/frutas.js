@@ -2,7 +2,7 @@
 let frutas = [];
 
 async function obtenerFrutas() {
-  const response = await fetch("../data/stock.json");
+  const response = await fetch("https://raw.githubusercontent.com/DarioVen/FruitiTiendaJs-VenenciaDario/refs/heads/main/data/stock.json");
   const frutasObtenidas = await response.json();
   return frutasObtenidas;
 }
